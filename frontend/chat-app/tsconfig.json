@@ -1,0 +1,13 @@
+{
+  "extends": "expo/tsconfig.base", // Uses Expo's recommended base settings
+  "compilerOptions": {
+    "strict": true, // Enables all strict TypeScript rules
+    "baseUrl": ".", // Allows relative imports from project root
+    "types": ["react", "react-native"], // Explicitly includes React + RN types
+    "paths": {
+      "@/*": ["./*"], // Alias: @ -> root (e.g. "@/components/...")
+      "@utils/*": ["utils/*"] // Alias: @utils -> utils folder
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
+}
