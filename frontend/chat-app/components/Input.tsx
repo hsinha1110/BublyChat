@@ -15,7 +15,7 @@ const Input = (props: InputProps) => {
         isFocused && styles.primaryBorder,
       ]}
     >
-      {props.icon && <View style={styles.iconContainer}>{props.icon}</View>}{" "}
+      {props.icon && <View style={styles.iconContainer}>{props.icon}</View>}
       <TextInput
         style={[styles.input, props.inputStyle]}
         placeholderTextColor={colors.neutral400}

@@ -40,3 +40,37 @@ export interface InputProps extends TextInputProps {
   label?: string;
   error?: string;
 }
+export interface DecodedTokenProps {
+  user: UserProps;
+  iat: number;
+  exp: number;
+}
+// Define the UserProps type if not already defined
+export type UserProps = {
+  id: string;
+  email: string;
+  name: string;
+  avatar?: string | null; // If you have an avatar
+  // Add any other user-related properties here
+  [key: string]: any; // Allows for additional dynamic properties if needed
+};
+
+// Define the AuthContextProps type
+export type AuthContextProps = {
+  token: string | null; // JWT token or null if not authenticated
+  user: UserProps | null; // User details or null if not logged in
+  signIn: (email: string, password: string) => Promise<void>; // Login method
+  signUp: (
+    email: string,
+    password: string,
+    name: string,
+    avatar: string | null
+  ) => Promise<void>; // Register method
+  signOut: () => Promise<void>; // Sign out method
+  updateToken: (token: string) => void; // Update token in the context
+};
+export interface DecodedTokenProps {
+  exp: number; // Expiration timestamp
+  iat: number; // Issued at timestamp
+  user: UserProps; // Your user data
+}
